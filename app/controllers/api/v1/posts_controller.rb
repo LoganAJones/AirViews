@@ -1,0 +1,35 @@
+class Api::V1::PostsController < ApplicationController
+  protect_from_forgery unless: -> { request.format.json? }
+  # before_action :authenticate_user!, except: [:index, :show]
+def index
+  @posts = Post.all
+    render json: @posts
+  end
+def show
+    @post = Post.find(params[:id])
+    render json: @post.to_json
+  end
+  def new
+
+    post = Post.new(description: data[:description], post_art: data[:post_art])
+
+    render json: {post: post}
+  end
+
+  def create
+    data = params
+    post = Post.new(post_params)
+
+    if post.save
+      render json: {post: post}, adapter: :json
+    else
+      render json: { error: post.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def post_params
+    params.permit(:description, :post_art)
+  end
+end

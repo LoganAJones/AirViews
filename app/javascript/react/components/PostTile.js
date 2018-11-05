@@ -9,7 +9,7 @@ const PostTile = (props) => {
     <div className="post-tile tilebreak ">
 
       <Link to={`/posts/${props.id}`} >
-      <p>{post_art}</p>
+      <img src={post_art}/>
       <p>{description}</p>
 
       </Link>

@@ -2,16 +2,39 @@ class PostArtUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-
+  # include CarrierWave::MiniMagick
+  # include CarrierWave::Video
+  # include CarrierWave::FFmpeg
   # Choose what kind of storage to use for this uploader:
-  storage :file
+
+      storage :file
+      # storage :fog
   # storage :fog
+  process encode_video: [:mp4, callbacks: { after_transcode: :set_success } ]
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+
+
+
+  # version :video, :if => :video? do
+  #         process :encode
+  #    end
+  #
+  #   def encode
+  #       video = FFMPEG::Movie.new(@file.path)
+  #       video_transcode = video.transcode(@file.path)
+  #   end
+  #
+  #   # Create different versions of your uploaded files:
+  #
+  #   protected
+  #   def video?(new_file)
+  #       new_file.content_type.include? 'video'
+  #   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

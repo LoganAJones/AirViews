@@ -8,7 +8,11 @@
 
 
 post_info = [
-  {description: 'Rock', user_id: 1, post_art:"rock.jpg" }
+  {description: 'The drive through Patratu Valley is a brilliant one with hairpin bends. View from the top of the hill is great with dense forests surrounding Patratu Dam. One of the most picturesque sites in Jharkhand.', user_id: 1, remote_post_art_url:"https://i.ytimg.com/vi/D3jyV5eYODI/maxresdefault.jpg" },
+  {description: 'The drive through Patratu Valley is a brilliant one with hairpin bends. View from the top of the hill is great with dense forests surrounding Patratu Dam. One of the most picturesque sites in Jharkhand.', user_id: 1, remote_post_art_url:"https://i.ytimg.com/vi/O2N-MDh5yFk/maxresdefault.jpg" },
+  {description: 'The drive through Patratu Valley is a brilliant one with hairpin bends. View from the top of the hill is great with dense forests surrounding Patratu Dam. One of the most picturesque sites in Jharkhand.', user_id: 1, remote_post_art_url:"https://i.redd.it/ks3bvmcxdmxy.jpg" },
+  {description: 'The drive through Patratu Valley is a brilliant one with hairpin bends. View from the top of the hill is great with dense forests surrounding Patratu Dam. One of the most picturesque sites in Jharkhand.', user_id: 1, remote_post_art_url:"https://iso.500px.com/wp-content/uploads/2015/11/Night-shot.jpg" }
+  {description: 'The drive through Patratu Valley is a brilliant one with hairpin bends. View from the top of the hill is great with dense forests surrounding Patratu Dam. One of the most picturesque sites in Jharkhand.', user_id: 1, remote_post_art_url:"https://iso.500px.com/wp-content/uploads/2015/11/Night-shot.jpg" }
 
 ]
 

@@ -35,7 +35,7 @@ class PostIndexContainer extends Component {
         <PostTile
           key={post.id}
           id={post.id}
-          post_art={post_art}
+          post_art={post.post_art.url}
           description={post.description}
 
         />

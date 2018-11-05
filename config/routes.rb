@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       resources :posts
 end
 end
+get "/posts/new", to: 'homes#index'
+get "/posts/:id", to: 'homes#index'
 end

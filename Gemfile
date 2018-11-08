@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.3'
+ruby '2.4.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem "fog-aws"
+gem 'carrierwave-aws'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -33,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem "dotenv-rails"
 
 end
 
@@ -64,3 +67,4 @@ gem 'mini_magick'
 gem 'carrierwave-video'
 gem 'carrierwave-video-thumbnailer'
 gem 'carrierwave-ffmpeg'
+gem 'fog'

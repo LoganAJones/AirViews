@@ -44,7 +44,7 @@ class PostIndexContainer extends Component {
 
     return(
    <div className="">
-      <h1 className="">Home</h1>
+      <h1 className="text center" >Welcome Home</h1>
 
       <div id="">
       {posts}

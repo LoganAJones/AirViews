@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_many :posts
 
-  # mount_uploader :profile_photo, ProfilePhotoUploader
+  mount_uploader :profile_photo, ProfilePhotoUploader
 
   def admin?
   role == "admin"

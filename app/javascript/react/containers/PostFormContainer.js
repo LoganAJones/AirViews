@@ -71,7 +71,7 @@ class PostFormContainer extends Component {
         'Accept': 'application/json' },
         credentials: 'same-origin'
     })
-    .then(response => {
+    .then(response => {debugger
       if (response.ok) {
         return response;
       } else {
@@ -81,8 +81,8 @@ class PostFormContainer extends Component {
       }
     })
     .then(response => response.json())
-    .then(body => {
-      browserHistory.push(`/posts/${this.state.id}`)
+    .then(body => {debugger
+      browserHistory.push(`/posts/${body.post.id}`)
       // /${body.album.id}
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -110,47 +110,49 @@ class PostFormContainer extends Component {
 
 
     return(
-      <div className="">
-      <h1 className=""> New Post</h1>
+  <div className="">
+      <h1 className="text "> New Post</h1>
+      <div className="postform">
 
-<form onSubmit={this.handleSubmit}>
-      <label className="">Description</label>
-      <div className="field">
-      <input
+      <form onSubmit={this.handleSubmit}>
+    <section className="center imgalign">
+    <div className="dropzone  " name = 'post_art'>
+    <Dropzone onDrop={this.onDrop}>
+      <p>Try dropping some files here, or click to select files to upload.</p>
+    </Dropzone>
+    </div>
+
+    </section>
+    <div className="center">
+
+      <aside>
+
+        <h3 className="text">Selected Files:</h3>
+          <ul>
+          {
+            this.state.file.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+          }
+          </ul>
+      </aside>
+        <label className="">Description</label>
+        <div className="field">
+        <input
         label='Description:'
         type = 'text'
         name='description'
         value={this.state.description}
+        style={{ height: 200 }}
         onChange={this.handleChange}
         />
         </div>
 
-        <section className="">
+      <input className="button" type="submit" value="Submit" />
+      </div>
 
-          <div className="dropzone " name = 'post_art'>
-            <Dropzone onDrop={this.onDrop}>
-              <p>Try dropping some files here, or click to select files to upload.</p>
-            </Dropzone>
-          </div>
-
-          </section>
-          <div className="center">
-
-          <aside>
-
-            <h2 className="">Selected Files:</h2>
-            <ul>
-              {
-                this.state.file.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
-              }
-            </ul>
-          </aside>
-
-        <input className="button" type="submit" value="Submit" />
-        </div>
 
       </form>
-      </div>
+    </div>
+    </div>
     )
   }
 };

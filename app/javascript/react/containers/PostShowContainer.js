@@ -10,6 +10,7 @@ class PostShowContainer extends Component {
   }
 
   componentDidMount() {
+
     let postId = this.props.params.id
     fetch(`/api/v1/posts/${postId}`)
     .then(response => {
@@ -24,6 +25,7 @@ class PostShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+
       let fetchedPost = body
       this.setState({ post: fetchedPost})
 
@@ -34,12 +36,12 @@ class PostShowContainer extends Component {
   render(){
     return(
 
-      <div className="center " >
-        <h1 className="center title-font"></h1>
+      <div className=" " >
+        <h1 className=" title-font"></h1>
 
         <PostShow
 
-          posts = {this.state.post}
+          post = {this.state.post}
         />
       </div>
 

@@ -11,9 +11,9 @@ class PostArtUploader < CarrierWave::Uploader::Base
   #      { version: :p720, resolution: '1280x720'}
   #    ]
      if Rails.env.test?
-   storage :fog
+       storage :file
  else
-   storage :file
+   storage :fog
  end
   # storage :fog
   # process encode_video: [:mp4, callbacks: { after_transcode: :set_success } ]

@@ -9,7 +9,7 @@ const PostTile = (props) => {
   if (props.post_art) {
     post_art = props.post_art
     filearray = props.post_art.split(".")
-    if (filearray[filearray.length-1] == "MP4" || filearray[filearray.length-1] == "mov"){
+    if (filearray[filearray.length-1] == "mp4" || filearray[filearray.length-1] == "mov"){
       display = <video width="470" height="252" src={post_art} controls autoPlay/>
     } else {
       display = <img src={post_art} />

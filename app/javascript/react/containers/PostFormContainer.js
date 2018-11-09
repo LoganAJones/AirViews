@@ -71,7 +71,7 @@ class PostFormContainer extends Component {
         'Accept': 'application/json' },
         credentials: 'same-origin'
     })
-    .then(response => {debugger
+    .then(response => {
       if (response.ok) {
         return response;
       } else {
@@ -81,7 +81,7 @@ class PostFormContainer extends Component {
       }
     })
     .then(response => response.json())
-    .then(body => {debugger
+    .then(body => {
       browserHistory.push(`/posts/${body.post.id}`)
       // /${body.album.id}
     })
@@ -136,7 +136,7 @@ class PostFormContainer extends Component {
       </aside>
         <label className="">Description</label>
         <div className="field">
-        <input
+        <textarea
         label='Description:'
         type = 'text'
         name='description'

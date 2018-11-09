@@ -10,7 +10,7 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body class="background-color">
+<body id="background" class="background-color small-12 large-12 columns">
 
   <nav class="top-bar">
     <ul class="title-area">
@@ -19,7 +19,7 @@
       </li>
     </ul>
 
-    <section class="top-bar-section">
+    <section class="top-bar-section ">
       <ul class="right">
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
@@ -30,16 +30,14 @@
       </ul>
     </section>
   </nav>
+
   <% if user_signed_in? %>
   <div class="sidenav">
-  <a href="/"><i class="fab fa-telegram-plane planesize"></i></a>
+  <a href="/homefeed"><i class="fab fa-telegram-plane planesize"></i></a>
   <a href="/posts/new"><i class="far fa-plus-square"></i></a>
   <a href="/user/all"><i class="fas fa-search"></i></a>
-  <a href="#clients"><i class="fas fa-heart"></i></a>
-  <div class="far fa-user">
-
+  <!-- <a href="#clients"><i class="fas fa-heart"></i></a> -->
   <%= link_to '<i class="far fa-user"></i>'.html_safe, user_path(current_user) %>
-  <!-- <a href="/users/#{current_user.id}"><i class="far fa-user"></i></a> -->
 </div>
   <%- end -%>
 </div>
@@ -54,7 +52,7 @@
   <div class="">
 
     <% if !user_signed_in? %>
-    <p>New to Our Site? Why don't You Sign Up!</p>
+    <p class="center text">New to Our Site? Why don't You Sign Up!</p>
     <%- end -%>
 
     <%= yield %>

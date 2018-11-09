@@ -111,14 +111,14 @@ class PostFormContainer extends Component {
 
     return(
   <div className="">
-      <h1 className="text "> New Post</h1>
+      <h1 className="text center "> New Post</h1>
       <div className="postform">
 
       <form onSubmit={this.handleSubmit}>
     <section className="center imgalign">
     <div className="dropzone  " name = 'post_art'>
     <Dropzone onDrop={this.onDrop}>
-      <p>Try dropping some files here, or click to select files to upload.</p>
+      <p>Drop in Some Killer Drone Shots! Large Files May take a While to Load! Be Patient!</p>
     </Dropzone>
     </div>
 

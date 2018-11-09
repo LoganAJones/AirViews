@@ -39,7 +39,7 @@ class UserShowContainer extends Component {
 
     return(
    <div className="">
-      <h1 className="text">Home</h1>
+      <h1 className="text center">{this.state.users.user_name}'s Profile</h1>
       <div id="">
         <UserTile
           key={this.state.users.id}

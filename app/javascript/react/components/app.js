@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, IndexRoute, Router, browserHistory } from 'react-router'
+import HomeShowContainer from '../containers/HomeShowContainer'
 import PostIndexContainer from '../containers/PostIndexContainer'
 import PostFormContainer from '../containers/PostFormContainer'
 import PostShowContainer from '../containers/PostShowContainer'
@@ -10,7 +11,7 @@ export const App = (props) => {
   return (
 
     <Router history={browserHistory}>
-      <Route path='/' component={PostIndexContainer} />
+      <Route path='/' component={HomeShowContainer} />
       <Route path='/homefeed' component={PostIndexContainer} />
       <Route path='/posts/new' component={PostFormContainer} />
       <Route path='/posts/:id' component={PostShowContainer} />

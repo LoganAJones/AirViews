@@ -6,10 +6,10 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-<div class="tilebreak">
+<div class="tilebreaksignup">
 
 <div class="small-11 large-10 columnss">
-<div class="signupfield">
+<div class="">
 
   <div class="field ">
     <%= f.label :first_name, 'First Name' %><br />
@@ -25,7 +25,7 @@
     <%= f.label :user_name, 'User Name' %><br />
     <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name" %>
   </div>
-  
+
 
   <div class="field ">
     <%= f.label :email %><br />
@@ -44,17 +44,19 @@
     <%= f.label :password_confirmation, 'Password Confirmation'%><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+<div class="center">
 
   <%=f.file_field :profile_photo %>
   </div>
 </div>
+</div>
 
-  <div class="actions">
+  <div class="actions center">
     <%= f.submit "Sign up" %>
   </div>
   </div>
 <% end %>
-<div class="">
+<div class="center">
 
 
 <%= render "devise/shared/links" %>

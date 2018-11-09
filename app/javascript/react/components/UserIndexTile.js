@@ -12,13 +12,13 @@ const UserIndexTile = (props) => {
   return(
 
 
-    <div className="large-8 columns ">
+    <div className="small-12 large-12 columns ">
     <div className="  userindex-tile  ">
 
 
+    <Link to={`/users/${props.id}`} >
       <p className="username"> {user_name}</p>
 
-      <Link to={`/users/${props.id}`} >
       <div className="photo">
       <img src={props.profile_photo}/>
       </div>

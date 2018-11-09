@@ -2,7 +2,7 @@ class Api::V1::PostsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
   before_action :authenticate_user!, except: [:index, :show]
 def index
-  @posts = Post.all
+  @posts = Post.all.order(:created_at).reverse_order
     render json: @posts
   end
 def show

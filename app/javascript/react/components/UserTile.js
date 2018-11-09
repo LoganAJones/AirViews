@@ -25,18 +25,16 @@ const UserTile = (props) => {
 
   }
   return(
-
-    <div className="user-tile tilebreak ">
-
-
-
-      <p>{first_name}</p>
-      <p>{last_name}</p>
-      <p>{user_name}</p>
+<div>
+    <div className="user-tile user-tile-wrap ">
+      <p>{first_name} {last_name}</p>
       <img src={props.profile_photo}/>
-      {mappedPosts}
-
       </div>
+      <div className=" ">
+      {mappedPosts}
+      </div>
+      </div>
+
 
   )
 }

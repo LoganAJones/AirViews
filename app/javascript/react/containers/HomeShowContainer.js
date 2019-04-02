@@ -9,7 +9,7 @@ class UserShowContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(`/api/v1/users/1`)
+    fetch(`/api/v1/users/2`)
     .then(response => {
       if (response.ok) {
         return response;
